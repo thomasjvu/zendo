@@ -19,7 +19,7 @@ function HamburgerMenu() {
     const onLogout = () => {
         dispatch(logout());
         dispatch(reset());
-        setIsOpen(false)
+        setIsOpen(false);
         navigate("/");
     };
 
@@ -28,8 +28,8 @@ function HamburgerMenu() {
     };
 
     const handleLinkClick = () => {
-        setIsOpen(false)
-    }
+        setIsOpen(false);
+    };
 
     return (
         <div className="hamburger-menu">
@@ -46,7 +46,11 @@ function HamburgerMenu() {
                 <div className="hamburger-menu-open">
                     <ul className="menu-items">
                         <li>
-                            <Link to="/" className="action-btn">
+                            <Link
+                                to="/"
+                                className="action-btn"
+                                onClick={handleLinkClick}
+                            >
                                 <CgHomeAlt />
                                 Home
                             </Link>
@@ -64,13 +68,21 @@ function HamburgerMenu() {
                         ) : (
                             <>
                                 <li>
-                                    <Link to="/login" className="action-btn" onClick={handleLinkClick}>
+                                    <Link
+                                        to="/login"
+                                        className="action-btn"
+                                        onClick={handleLinkClick}
+                                    >
                                         <CgLogIn />
                                         Login
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/register" className="action-btn" onCLick={handleLinkClick}>
+                                    <Link
+                                        to="/register"
+                                        className="action-btn"
+                                        onClick={handleLinkClick}
+                                    >
                                         <CgUser /> Signup
                                     </Link>
                                 </li>
