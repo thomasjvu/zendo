@@ -433,3 +433,14 @@ footer {
 }
 
 
+/**
+* Dashboard
+*/
+
+.dashboard {
+    height: 66vh;
+}
+
+.dashboard h2 {
+    margin-top: 50px;
+}

@@ -25,6 +25,7 @@ function Dashboard() {
         return () => {
             dispatch(reset);
         };
+
     }, [user, navigate, isError, message, dispatch]);
 
     if (isLoading) {
@@ -32,25 +33,26 @@ function Dashboard() {
     }
 
     return (
-        <>
+        <div className="dashboard">
             <section className="heading">
-                <h1 className="text-center text-4xl">Welcome <span>@{user && user.username}</span></h1>
-                <p className="text-center">Notes List Dashboard</p>
+                <h2 className="text-center text-4xl">Hi, <span>@{user && user.username}</span></h2>
+                <prompt></prompt>
+                <p className="text-center">Are you ready to start creating?</p>
                 <NoteForm />
 
-                <section className="content">
-                    {notes.length > 0 ? (
-                        <div className="notes">
-                            {notes.map((note) => (
-                                <NoteItem key={note._id} note={note} />
-                            ))}
-                        </div>
-                    ) : (
-                        <h3>You have no notes... :( sad face</h3>
-                    )}
-                </section>
             </section>
-        </>
+            <section className="content">
+                {notes.length > 0 ? (
+                    <div className="notes">
+                        {notes.map((note) => (
+                            <NoteItem key={note._id} note={note} />
+                        ))}
+                    </div>
+                ) : (
+                    <h3>You have no notes... :( sad face</h3>
+                )}
+            </section>
+        </div>
     );
 }
 
