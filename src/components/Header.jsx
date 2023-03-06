@@ -2,47 +2,16 @@ import { FaUserAlt, FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout, reset } from "../features/auth/authSlice";
+import HamburgerMenu from "./HamburgerMenu";
 
 function Header() {
-    const navigate = useNavigate();
-    const dispatch = useDispatch();
-    const { user } = useSelector((state) => state.auth);
-
-    const onLogout = () => {
-        dispatch(logout());
-        dispatch(reset());
-        navigate("/");
-    };
-
     return (
         <header className="header">
-            <div className="logo">
-                <Link to="/" className="">
-                    Deep Space
-                </Link>
-            </div>
-            <ul>
-                {user ? (
-                    <li>
-                        <button className="btn" onClick={onLogout}>
-                            <FaSignOutAlt className=""/> Logout
-                        </button>
-                    </li>
-                ) : (
-                    <>
-                        <li>
-                            <Link to="/login">
-                                <FaSignInAlt /> Login
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/register">
-                                <FaUserAlt /> Register
-                            </Link>
-                        </li>
-                    </>
-                )}
-            </ul>
+            <Link to="/" className="app-logo">
+                Zendo
+            </Link>
+            <h2 className="app-description">Meditation Journaling App</h2>
+            <HamburgerMenu />
         </header>
     );
 }

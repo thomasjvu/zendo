@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Trispace:wght@400;700&display=swap');
 
+@font-face {
+    font-family: "Osaka Sans";
+    src: url("./assets/osaka-sans.ttf")
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,9 +14,6 @@
 * Defaults
 **/
 
-canvas {
-    height: 100vh;
-}
 * {
     margin: 0;
     padding: 0;
@@ -20,9 +22,31 @@ canvas {
 
 body {
     font-family: "Trispace", monospace;
-    background: #f8f8ff;
+    background: #e6cca1;
+    color: #000;
     /* height: 100vh; */
 }
+
+/**
+ * Canvas
+ */
+
+canvas {
+    height: 66vh;
+    background-size: cover;
+}
+
+.canvas-html-content {
+    font-size: 0.75rem;
+    margin-top: -1.5vw;
+    margin-left: 14vw;
+    width: 400px;
+}
+
+
+/**
+ * Text
+ */
 
 a {
     text-decoration: none;
@@ -51,31 +75,28 @@ h3 {
 * Header
 **/
 
-.logo {
-    color: #5B3256;
+.app-logo {
+    color: #e6cca1;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-family: 'Osaka Sans', sans-serif;
+}
+
+.app-description {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.5rem;
     text-transform: uppercase;
 }
 
 .header {
-    background: #212121;
+    background: #040404;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    flex-flow: column;
     padding: 20px 20px;
-    border-bottom: 1px solid #e6e6e6;
-    margin-bottom: 60px;
-}
-
-.header ul {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.header ul li {
-    margin-left: 20px;
 }
 
 .header ul li a {
@@ -92,6 +113,76 @@ h3 {
 }
 
 /**
+ * Hamburger Menu
+ **/
+
+.hamburger-menu-open {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9998;
+}
+
+.hamburger-icon {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin-top: 20px;
+  margin-right: 20px;
+  width: 33px;
+  height: 33px;
+  z-index: 9999;
+  color: #fff;
+}
+
+.hamburger-icon:before,
+.hamburger-icon:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.hamburger-icon:before {
+  top: -8px;
+}
+
+.hamburger-icon:after {
+  top: 8px;
+}
+
+.menu-items {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  border-radius: 4px;
+  animation: slide-down 0.3s ease-out;
+
+  color: #fff;
+  background-color: #040404;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/**
 * Heading
 **/
 
@@ -104,6 +195,7 @@ h3 {
 .heading p {
     color: #828282;
 }
+
 .container {
     width: 100%;
     max-width: 960px;
@@ -111,7 +203,6 @@ h3 {
     padding: 0 20px;
     text-align: center;
 }
-
 
 .messages {
     display: grid;
@@ -269,4 +360,76 @@ h3 {
 .text-xl {
     font-size: 1.5rem;
 }
+
+
+.action-btn {
+    width: 100px;
+    display: flex;
+    gap: 10px;
+}
+
+
+/**
+* Footer
+*/
+
+footer {
+    color: #fff;
+    background: #040404;
+    padding: 40px 20px 20px 20px;
+    display: flex;
+    flex-flow: column;
+}
+
+.main-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: column;
+    gap: 15px;
+}
+
+.copyright,
+.credits { 
+    text-align: center;
+    font-weight: bold;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-icon {
+    color: gray;
+}
+
+.social-icon:hover {
+    color: #fff;
+}
+
+.sub-footer {
+    margin-top: 5px;
+}
+
+.music-buttons {
+    display: flex;
+    font-size: 1.5rem;
+}
+
+.music-button {
+    color: #ff2fe5;
+}
+
+
+/**
+* Hidden
+*/
+
+.hidden {
+    display: none;
+    visibility: hidden;
+}
+
 
