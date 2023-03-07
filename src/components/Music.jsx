@@ -6,6 +6,7 @@ function Music({url}) {
 
     const start = () => {
         audio.play()
+        audio.loop = true
     };
 
     const pause = () => {
