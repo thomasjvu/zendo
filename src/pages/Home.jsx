@@ -60,31 +60,6 @@ function Home() {
                     />
                 </Suspense>
             </Canvas>
-            {/*
-<div>
-<section>
-<h2>What is Zendo?</h2>
-<h2>
-Zendo is a Japanese meditation hall. In Zen Buddhism,
-the zendo is a spiritual dojo where zazen (sitting
-meditation) is practiced.
-</h2>
-<h3>
-Let this be your virtual Zendo, where you can practice
-meditaion.
-</h3>
-</section>
-<section>
-<h3>How it Works</h3>
-<p>
-Everyday, there will be a new prompt, as well as a new
-song that you can listen to to inspire your writing. You
-can choose to make the note public for each day, and let
-other users see your affirmations and how you felt.
-</p>
-</section>
-</div>
-            */}
         </div>
     );
 }

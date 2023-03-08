@@ -28,4 +28,4 @@ The web application is designed and developed by [@thomasjvu](https://github.com
 
 The music for this application is created by [@Peritune](https://www.youtube.com/@PeriTune).
 
-The 3D model is created by [@itsmeAllenUwu](https://sketchfab.com/3d-models/meditation-diorama-a8e5d404631348aab2a64046f9aaf263)
+The 3D model is created by [@itsmeAllenUwu](https://sketchfab.com/3d-models/meditation-diorama-a8e5d404631348aab2a64046f9aaf263).
