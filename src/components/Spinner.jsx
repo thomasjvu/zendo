@@ -1,7 +1,10 @@
+import { CgSync } from "react-icons/cg"
+
 function Spinner() {
   return (
       <div className='loadingSpinnerContainer'>
-        <div className='loadingSpinner'></div>
+        <CgSync className='loadingSpinner' />
+        <h1>Now Loading...</h1>
       </div>
   )
 }

@@ -7,6 +7,8 @@ import {
     CgLogIn,
     CgLogOut,
     CgUser,
+    CgCalendarToday,
+    CgBolt,
 } from "react-icons/cg";
 import { useState } from "react";
 
@@ -33,38 +35,52 @@ function HamburgerMenu() {
 
     return (
         <div className="hamburger-menu">
-            <button onClick={toggleMenu}>
-                <span>
-                    <CgMenuGridO
-                        className="hamburger-icon"
-                        width="100"
-                        height="100"
-                    />
-                </span>
-            </button>
+            <CgMenuGridO
+                className="hamburger-icon"
+                width="100"
+                height="100"
+                onClick={toggleMenu}
+            />
             {isOpen && (
                 <div className="hamburger-menu-open">
                     <ul className="menu-items">
                         <li>
-                            <Link
-                                to="/"
-                                className="action-btn"
-                                onClick={handleLinkClick}
-                            >
+                            <Link to="/">
+                                <img
+                                    className="float menu-logo"
+                                    src="../src/assets/zendo-icon.png"
+                                    width="250px"
+                                />
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/" className="action-btn" onClick={handleLinkClick}>
                                 <CgHomeAlt />
                                 Home
                             </Link>
                         </li>
                         {user ? (
-                            <li>
-                                <button
-                                    className="action-btn"
-                                    onClick={onLogout}
-                                >
-                                    <CgLogOut className="" />
-                                    Logout
-                                </button>
-                            </li>
+                            <>
+                                <li>
+                                    <Link
+                                        to="/dashboard"
+                                        className="action-btn"
+                                        onClick={handleLinkClick}
+                                    >
+                                        <CgCalendarToday />
+                                        Dashboard
+                                    </Link>
+                                </li>
+                                <li>
+                                    <button
+                                        className="lgoout-btn action-btn"
+                                        onClick={onLogout}
+                                    >
+                                        <CgLogOut className="" />
+                                        Logout
+                                    </button>
+                                </li>
+                            </>
                         ) : (
                             <>
                                 <li>

@@ -30,8 +30,18 @@ function Home() {
                     />
                     <Html distanceFactor={15}>
                         <div className="canvas-html-content">
-                            <h3 className="canvas-html-content-heading">Zendō (禅堂)</h3>
-                            <p>a spiritual dōjō where <br /> meditation is practiced</p>
+                            <h3 className="canvas-html-content-heading">
+                                Zendō (禅堂)
+                            </h3>
+                            <p className="canvas-html-content-text">
+                                a spiritual dōjō where <br /> meditation is
+                                practiced
+                            </p>
+                            {/*
+                            <a className="canvas-html-content-enter" href="/dashboard">
+                                - Enter -
+                            </a>
+                            */}
                         </div>
                     </Html>
                     <OrbitControls

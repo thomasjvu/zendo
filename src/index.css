@@ -1,14 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Trispace:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Trispace:wght@400;700&display=swap");
 
 @font-face {
     font-family: "Osaka Sans";
-    src: url("./assets/osaka-sans.ttf")
+    src: url("./assets/osaka-sans.ttf");
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 
 /**
 * Defaults
@@ -18,6 +13,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+:root {
+    --beige: #e6cca1;
+    --pink: #c633ff;
+    --dark: #040404;
+    --carmine: #9d2933;
+    --ghost: #f8f8ff;
 }
 
 body {
@@ -32,7 +35,7 @@ body {
  */
 
 canvas {
-    height: 66vh;
+    height: 71.6vh;
     background-size: cover;
 }
 
@@ -43,6 +46,18 @@ canvas {
     width: 400px;
 }
 
+.canvas-html-content-text {
+    margin-bottom: 10px;
+}
+
+a.canvas-html-content-enter {
+    font-weight: bold;
+    margin-left: 50px;
+}
+
+a.canvas-html-content-enter:hover {
+    font-style: italic;
+}
 
 /**
  * Text
@@ -50,6 +65,7 @@ canvas {
 
 a {
     text-decoration: none;
+    color: var(--pink);
 }
 
 p {
@@ -61,7 +77,7 @@ ul {
 }
 
 li {
-    line-height: 2.2;
+    line-height: 1.5;
 }
 
 h1,
@@ -76,11 +92,16 @@ h3 {
 **/
 
 .app-logo {
-    color: #e6cca1;
+    color: var(--beige);
     font-weight: bold;
     font-size: 3.5rem;
     text-transform: uppercase;
-    font-family: 'Osaka Sans', sans-serif;
+    font-family: "Osaka Sans", sans-serif;
+}
+
+.app-logo:hover {
+    color: var(--pink);
+    transition-duration: 2s;
 }
 
 .app-description {
@@ -104,12 +125,26 @@ h3 {
     align-items: center;
 }
 
-.header ul li a:hover {
-    color: #777;
-}
 
-.header ul li a svg {
-    margin-right: 5px;
+/**
+* Credits Modal
+**/
+
+.credits-modal {
+    position: fixed;
+    top: 40%;
+    left: 40%;
+    width: 20%;
+    height: 20%;
+    z-index: 9998;
+    background: var(--dark);
+    border-radius: 5px;
+    border: 1px solid #fff;
+    padding: 20px;
+}
+.credits-close-container {
+    display: flex;
+    justify-content: flex-end;
 }
 
 /**
@@ -117,69 +152,74 @@ h3 {
  **/
 
 .hamburger-menu-open {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 9998;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    z-index: 9998;
 }
 
 .hamburger-icon {
-  position: fixed;
-  top: 0;
-  right: 0;
-  margin-top: 20px;
-  margin-right: 20px;
-  width: 33px;
-  height: 33px;
-  z-index: 9999;
-  color: #fff;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin-top: 20px;
+    margin-right: 20px;
+    width: 33px;
+    height: 33px;
+    z-index: 9999;
+    color: #fff;
+}
+
+.hamburger-icon:hover {
+    color: var(--pink);
+    transition-duration: 2s;
+    cursor: pointer;
 }
 
 .hamburger-icon:before,
 .hamburger-icon:after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
 }
 
 .hamburger-icon:before {
-  top: -8px;
+    top: -8px;
 }
 
 .hamburger-icon:after {
-  top: 8px;
+    top: 8px;
 }
 
 .menu-items {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  border-radius: 4px;
-  animation: slide-down 0.3s ease-out;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    animation: slide-down 1s ease-out;
 
-  color: #fff;
-  background-color: #040404;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
+    background-color: #040404;
 
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
 
 @keyframes slide-down {
-  from {
-    transform: translateY(-10px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 /**
@@ -226,6 +266,17 @@ h3 {
     background: none;
 }
 
+/**
+* Form 
+**/
+
+.form-heading {
+}
+.form-subheading {
+    font-style: italic;
+}
+
+.form-header,
 .form,
 .content {
     width: 70%;
@@ -287,6 +338,185 @@ h3 {
     transform: scale(0.98);
 }
 
+/**
+* Classbased Styles (Pseudo-TailwindCSS)
+**/
+.text-center {
+    text-align: center;
+}
+
+.text-4xl {
+    font-size: 2.25rem;
+}
+.text-3xl {
+    font-size: 2rem;
+}
+.text-2xl {
+    font-size: 1.75rem;
+}
+.text-xl {
+    font-size: 1.5rem;
+}
+
+.action-btn {
+    display: flex;
+    gap: 15px;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.action-btn:hover {
+    color: #fff;
+}
+
+/**
+* Footer
+*/
+
+footer {
+    color: #fff;
+    background: #040404;
+    padding: 40px 20px 20px 20px;
+    display: flex;
+    flex-flow: column;
+}
+
+.main-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: column;
+    gap: 15px;
+}
+
+.copyright,
+.credits {
+    text-align: center;
+    font-weight: bold;
+}
+
+.credits a {
+    color: var(--pink);
+}
+.credits a:hover {
+    color: var(--beige);
+    transition-duration: 2s;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-icon {
+    color: gray;
+}
+
+.social-icon:hover {
+    color: #fff;
+}
+
+.sub-footer {
+    margin-top: 5px;
+}
+
+.music-buttons {
+    display: flex;
+    font-size: 1.5rem;
+}
+
+.music-button {
+    color: var(--pink);
+}
+
+/**
+* Hidden
+*/
+
+.hidden {
+    display: none;
+    visibility: hidden;
+}
+
+/**
+* Dashboard
+*/
+
+.dashboard {
+    margin-bottom: 100px;
+}
+
+.dashboard h2 {
+    margin-top: 50px;
+}
+
+/**
+* Notes
+**/
+.note {
+    background: #fff;
+    margin: 15px 0px;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.note:hover {
+    background: #e4e4e4;
+}
+
+.note-options-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.note-option:hover {
+    color: var(--pink);
+}
+
+/**
+* Quill Editor
+**/
+
+.ql-editor {
+    font-family: "Trispace", monospace;
+}
+
+.ql-bubble .ql-editor blockquote {
+    border-left: 4px solid var(--pink);
+}
+
+/**
+* Scrollbar
+**/
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--dark);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #212121;
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/**
+* Spinner
+**/
+
 .loadingSpinnerContainer {
     position: fixed;
     top: 0;
@@ -298,14 +528,13 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-flow: column;
+    gap: 25px;
 }
 
 .loadingSpinner {
     width: 64px;
     height: 64px;
-    border: 8px solid;
-    border-color: #000 transparent #555 transparent;
-    border-radius: 50%;
     animation: spin 1.2s linear infinite;
 }
 
@@ -333,114 +562,15 @@ h3 {
 }
 
 /**
-* Tiptap
+* Logout
 **/
-.ProseMirror {
-    background: #fff;
-    border-radius: 5px;
-    padding: 10px 10px;
-}
 
-/**
-* Classbased Styles (Pseudo-TailwindCSS)
-**/
-.text-center {
-    text-align: center;
-}
-
-.text-4xl {
-    font-size: 2.25rem;
-}
-.text-3xl {
-    font-size: 2rem;
-}
-.text-2xl {
-    font-size: 1.75rem;
-}
-.text-xl {
-    font-size: 1.5rem;
-}
-
-
-.action-btn {
-    width: 100px;
-    display: flex;
-    gap: 10px;
-}
-
-
-/**
-* Footer
-*/
-
-footer {
-    color: #fff;
-    background: #040404;
-    padding: 40px 20px 20px 20px;
-    display: flex;
-    flex-flow: column;
-}
-
-.main-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-flow: column;
-    gap: 15px;
-}
-
-.copyright,
-.credits { 
-    text-align: center;
-    font-weight: bold;
-}
-
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.social-icon {
-    color: gray;
-}
-
-.social-icon:hover {
-    color: #fff;
-}
-
-.sub-footer {
-    margin-top: 5px;
-}
-
-.music-buttons {
-    display: flex;
-    font-size: 1.5rem;
-}
-
-.music-button {
-    color: #ff2fe5;
-}
-
-
-/**
-* Hidden
-*/
-
-.hidden {
-    display: none;
-    visibility: hidden;
-}
-
-
-/**
-* Dashboard
-*/
-
-.dashboard {
-    height: 66vh;
-}
-
-.dashboard h2 {
-    margin-top: 50px;
+button {
+    background: rgba(0, 0, 0, 0);
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: var(--pink);
+    font-family: "Trispace", monospace;
+    font-size: 1rem;
 }

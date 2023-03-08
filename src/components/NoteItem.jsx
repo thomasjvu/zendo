@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { deleteNote } from "../features/notes/noteSlice"
+import { CgCloseR, CgPen, CgBookmark } from "react-icons/cg";
 
 function NoteItem({ note }) {
 
@@ -7,10 +8,14 @@ function NoteItem({ note }) {
 
     return (
         <div className="note">
+            <div className="note-options-container">
+                <CgBookmark className="note-option note-option-bookmark" onClick={() => dispatch(deleteNote(note._id))}/>
+                <CgCloseR className="note-option note-option-delete" onClick={() => dispatch(deleteNote(note._id))}/>
+                {/* <CgPen className="note-option note-option-edit" onClick={() => dispatch(deleteNote(note._id))}/> */}
+            </div>
             <div>{new Date(note.createdAt).toLocaleString("en-US")}</div>
             <h2>{note.text}</h2>
-            <h3>Public: {note.privacy}</h3>
-            <button className="close" onClick={() =>dispatch(deleteNote(note._id))}>X</button>
+            <h3>Privacy: {note.privacy}</h3>
         </div>
     );
 }

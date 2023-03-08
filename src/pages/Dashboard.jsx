@@ -17,7 +17,7 @@ function Dashboard() {
 
     useEffect(() => {
         if (!user) {
-            navigate("/");
+            navigate("/login");
         }
 
         dispatch(getNotes());
@@ -34,18 +34,19 @@ function Dashboard() {
 
     return (
         <div className="dashboard">
-            <section className="heading">
-                <h2 className="text-center text-4xl">Hi, <span>@{user && user.username}</span></h2>
-                <prompt></prompt>
-                <p className="text-center">Are you ready to start creating?</p>
-                <NoteForm />
-
+            <section className="form-header">
+                <h2 className="form-heading text-4xl">@{user && user.username}</h2>
+                <p className="form-subheading"> ~ Let your mind loose. ~</p>
             </section>
+            <section className="form-header">
+                <p>This form is Markdown enabled... go wild!</p>
+            </section>
+            <NoteForm />
             <section className="content">
                 {notes.length > 0 ? (
                     <div className="notes">
                         {notes.map((note) => (
-                            <NoteItem key={note._id} note={note} />
+                            <NoteItem className="note-item" key={note._id} note={note} />
                         ))}
                     </div>
                 ) : (
