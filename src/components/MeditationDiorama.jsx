@@ -13,7 +13,7 @@ import { useGLTF } from "@react-three/drei";
 export default function Model(props) {
     const ref = useRef()
     const { nodes, materials } = useGLTF(
-        "../src/assets/meditation_diorama.glb"
+        'src/assets/meditation_diorama.glb'
     );
     useFrame((state) => {
         const t = state.clock.getElapsedTime();
