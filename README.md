@@ -1,7 +1,7 @@
 # Zendō
 Zendō is a meditation journaling application where users can create an account and write in a daily journal their meditations. Each day has a different prompt, and users can create, read, update, and delete their entries.
 
-![Zendo Landing Page](../src/assets/zendo-landing-page.png)
+![Zendo Landing Page](./src/assets/zendo-landing-page.png)
 
 ## Technologies 
 This is a MERN Stack (MongoDB, Express, React, Node.js) application. The web application is decoupled, so the server and the client are separate from each other. The server is hosted on Cyclic.sh, whereas the frontend is hosted on Render.com.
