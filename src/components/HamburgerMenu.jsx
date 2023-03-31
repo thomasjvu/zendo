@@ -44,15 +44,15 @@ function HamburgerMenu() {
             {isOpen && (
                 <div className="hamburger-menu-open">
                     <ul className="menu-items">
-                        <li>
-                            <Link to="/">
-                                <img
-                                    className="float menu-logo"
-                                    src="../src/assets/zendo-icon.png"
-                                    width="250px"
-                                />
-                            </Link>
-                        </li>
+                        {/* <li> */}
+                        {/*     <Link to="/"> */}
+                        {/*         <img */}
+                        {/*             className="float menu-logo" */}
+                        {/*             src="../src/assets/zendo-icon.png" */}
+                        {/*             width="250px" */}
+                        {/*         /> */}
+                        {/*     </Link> */}
+                        {/* </li> */}
                         <li>
                             <Link to="/" className="action-btn" onClick={handleLinkClick}>
                                 <CgHomeAlt />
