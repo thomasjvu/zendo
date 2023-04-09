@@ -5,6 +5,10 @@
     src: url("./assets/osaka-sans.ttf");
 }
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /**
 * Defaults
 **/
@@ -264,6 +268,13 @@ h3 {
     cursor: pointer;
     border: none;
     background: none;
+}
+
+/**
+* Pages
+*/
+.page {
+    height: 71.6vh;
 }
 
 /**

@@ -56,9 +56,9 @@ function Login() {
     }
 
     return (
-        <>
+        <div className="page">
             <section className="heading">
-                <h1>
+                <h1 className="text-4xl">
                     <FaSignInAlt /> Sign In
                 </h1>
                 <p>Login and start setting messages</p>
@@ -94,7 +94,7 @@ function Login() {
                     </div>
                 </form>
             </section>
-        </>
+        </div>
     );
 }
 
