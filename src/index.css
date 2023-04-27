@@ -35,12 +35,22 @@ body {
 }
 
 /**
- * Canvas
- */
+* Layout
+*/
 
-canvas {
+header {
+    min-height: 14.2vh;
+}
+main {
     height: 71.6vh;
 }
+footer {
+    min-height: 14.2vh;
+}
+
+/**
+ * Canvas
+ */
 
 .canvas-html-content {
     font-size: 0.75rem;

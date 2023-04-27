@@ -14,7 +14,7 @@ function Footer() {
     return (
         <footer>
             <section className="main-footer">
-                <h4 className="credits" onClick={creditsToggle}>
+                <h4 className="credits text-xs" onClick={creditsToggle}>
                     <Link to="/">Credits</Link>
                 </h4>
                 {isOpen && (
