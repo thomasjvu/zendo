@@ -46,7 +46,7 @@ function Footer() {
                 </section>
             </section>
             <section className="sub-footer">
-                <Music url="../src/assets/shizima-2.mp3" />
+                <Music url="https://res.cloudinary.com/dlcz9y0nv/video/upload/v1682559125/Zendo/shizima-2_iccwxb.mp3" />
             </section>
         </footer>
     );
