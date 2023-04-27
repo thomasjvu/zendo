@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { login, reset } from "../features/auth/authSlice";
+
+import Layout from "../components/Layout"
 import Spinner from "../components/Spinner";
 
 function Login() {
@@ -17,9 +19,7 @@ function Login() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const { user, isLoading, isError, isSuccess, message } = useSelector(
-        (state) => state.auth
-    );
+    const { user, isLoading, isError, isSuccess, message } = useSelector((state) => state.auth);
 
     useEffect(() => {
         if (isError) {
@@ -56,45 +56,47 @@ function Login() {
     }
 
     return (
-        <div className="page">
-            <section className="heading">
-                <h1 className="text-4xl">
-                    <FaSignInAlt /> Sign In
-                </h1>
-                <p>Login and start setting messages</p>
-            </section>
-            <section className="form">
-                <form onSubmit={onSubmit}>
-                    <div className="form-group">
-                        <input
-                            className="form-control"
-                            id="email"
-                            name="email"
-                            value={email}
-                            type="email"
-                            placeholder="Enter your email"
-                            onChange={onChange}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <input
-                            className="form-control"
-                            id="password"
-                            name="password"
-                            value={password}
-                            type="password"
-                            placeholder="Enter your password"
-                            onChange={onChange}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <button type="submit" className="btn btn-block">
-                            Submit
-                        </button>
-                    </div>
-                </form>
-            </section>
-        </div>
+        <Layout>
+            <div className="page">
+                <section className="heading">
+                    <h1 className="text-4xl">
+                        <FaSignInAlt /> Sign In
+                    </h1>
+                    <p>Login and start setting messages</p>
+                </section>
+                <section className="form">
+                    <form onSubmit={onSubmit}>
+                        <div className="form-group">
+                            <input
+                                className="form-control"
+                                id="email"
+                                name="email"
+                                value={email}
+                                type="email"
+                                placeholder="Enter your email"
+                                onChange={onChange}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <input
+                                className="form-control"
+                                id="password"
+                                name="password"
+                                value={password}
+                                type="password"
+                                placeholder="Enter your password"
+                                onChange={onChange}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <button type="submit" className="btn btn-block">
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </Layout>
     );
 }
 

@@ -6,11 +6,11 @@ import HamburgerMenu from "./HamburgerMenu";
 
 function Header() {
     return (
-        <header className="header">
-            <Link to="/" className="app-logo">
+        <header className="bg-black flex flex-col items-center p-8">
+            <Link to="/" className="logo">
                 Zendo
             </Link>
-            <h2 className="app-description">Meditation Journaling App</h2>
+            <h2 className="text-white text-xl">Meditation Journal</h2>
             <HamburgerMenu />
         </header>
     );

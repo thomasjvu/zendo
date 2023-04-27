@@ -2,11 +2,12 @@ import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Html, OrbitControls, ContactShadows } from "@react-three/drei";
 import MeditationDiorama from "../components/MeditationDiorama";
-import ModelLoader from "../components/ModelLoader"
+import ModelLoader from "../components/ModelLoader";
+import Layout from "../components/Layout";
 
 function Home() {
     return (
-        <div>
+        <Layout>
             <Canvas style={{ background: "#e6cca1" }} camera={{ rotation: [0, 0, 0], position: [0, 0, 5] }}>
                 <Suspense fallback={<ModelLoader />}>
                     <ambientLight intensity={1.5} />
@@ -19,10 +20,10 @@ function Home() {
                             a spiritual dōjō where <br /> meditation is practiced
                         </p>
                         {/*
-                            <a className="canvas-html-content-enter" href="/dashboard">
-                                - Enter -
-                            </a>
-                            */}
+                                <a className="canvas-html-content-enter" href="/dashboard">
+                                    - Enter -
+                                </a>
+                                */}
                     </div>
                 </Html>
                 <OrbitControls enableDamping rotateSpeed={1.1} enableZoom={false} />
@@ -36,7 +37,7 @@ function Home() {
                     blur={4}
                 />
             </Canvas>
-        </div>
+        </Layout>
     );
 }
 

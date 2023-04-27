@@ -40,7 +40,6 @@ body {
 
 canvas {
     height: 71.6vh;
-    background-size: cover;
 }
 
 .canvas-html-content {
@@ -92,10 +91,10 @@ h3 {
 }
 
 /**
-* Header
+* Logo
 **/
 
-.app-logo {
+.logo {
     color: var(--beige);
     font-weight: bold;
     font-size: 3.5rem;
@@ -103,30 +102,9 @@ h3 {
     font-family: "Osaka Sans", sans-serif;
 }
 
-.app-logo:hover {
+.logo:hover {
     color: var(--pink);
     transition-duration: 2s;
-}
-
-.app-description {
-    color: #fff;
-    font-weight: bold;
-    font-size: 1.5rem;
-    text-transform: uppercase;
-}
-
-.header {
-    background: #040404;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column;
-    padding: 20px 20px;
-}
-
-.header ul li a {
-    display: flex;
-    align-items: center;
 }
 
 
