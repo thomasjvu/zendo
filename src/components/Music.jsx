@@ -15,8 +15,8 @@ function Music({url}) {
 
     return (
         <div className="music-buttons">
-            <CgPlayButton onClick={start} className="music-button" />
-            <CgPlayPause onClick={pause} className="music-button" />
+            <CgPlayButton onClick={start} className="music-button hover:text-white" />
+            <CgPlayPause onClick={pause} className="music-button hover:text-white" />
         </div>
     )
 }
