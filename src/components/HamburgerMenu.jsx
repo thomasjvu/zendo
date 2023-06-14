@@ -44,17 +44,8 @@ function HamburgerMenu() {
             {isOpen && (
                 <div className="hamburger-menu-open">
                     <ul className="menu-items">
-                        {/* <li> */}
-                        {/*     <Link to="/"> */}
-                        {/*         <img */}
-                        {/*             className="float menu-logo" */}
-                        {/*             src="../src/assets/zendo-icon.png" */}
-                        {/*             width="250px" */}
-                        {/*         /> */}
-                        {/*     </Link> */}
-                        {/* </li> */}
                         <li>
-                            <Link to="/" className="action-btn" onClick={handleLinkClick}>
+                            <Link to="/" className="action-btn text-xl" onClick={handleLinkClick}>
                                 <CgHomeAlt />
                                 Home
                             </Link>
@@ -64,7 +55,7 @@ function HamburgerMenu() {
                                 <li>
                                     <Link
                                         to="/dashboard"
-                                        className="action-btn"
+                                        className="action-btn text-xl"
                                         onClick={handleLinkClick}
                                     >
                                         <CgCalendarToday />
@@ -73,10 +64,10 @@ function HamburgerMenu() {
                                 </li>
                                 <li>
                                     <button
-                                        className="lgoout-btn action-btn"
+                                        className="lgoout-btn action-btn text-xl"
                                         onClick={onLogout}
                                     >
-                                        <CgLogOut className="" />
+                                        <CgLogOut />
                                         Logout
                                     </button>
                                 </li>
@@ -86,7 +77,7 @@ function HamburgerMenu() {
                                 <li>
                                     <Link
                                         to="/login"
-                                        className="action-btn"
+                                        className="action-btn text-xl"
                                         onClick={handleLinkClick}
                                     >
                                         <CgLogIn />
@@ -96,7 +87,7 @@ function HamburgerMenu() {
                                 <li>
                                     <Link
                                         to="/register"
-                                        className="action-btn"
+                                        className="action-btn text-xl"
                                         onClick={handleLinkClick}
                                     >
                                         <CgUser /> Signup

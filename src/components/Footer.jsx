@@ -14,7 +14,7 @@ function Footer() {
     return (
         <footer>
             <section className="main-footer">
-                <h4 className="credits text-xs" onClick={creditsToggle}>
+                <h4 className="credits text-md" onClick={creditsToggle}>
                     <Link to="/">Credits</Link>
                 </h4>
                 {isOpen && (
@@ -23,12 +23,6 @@ function Footer() {
                             <CgCloseR className="credits-close-button" onClick={creditsToggle} />
                         </div>
                         <h3 className="credits-heading">Credits</h3>
-                        <p>
-                            Designer:{" "}
-                            <a href="https://github.com/thomasjvu" target="_blank">
-                                @thomasjvu
-                            </a>
-                        </p>
                         <p>
                             Developer:{" "}
                             <a href="https://github.com/thomasjvu" target="_blank">
