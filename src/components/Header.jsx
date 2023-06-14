@@ -3,7 +3,7 @@ import HamburgerMenu from "./HamburgerMenu";
 
 function Header() {
     return (
-        <header className="bg-black flex flex-col items-center justify-center">
+        <header className="bg-black flex flex-col items-center justify-center p-2">
             <Link to="/" className="logo">
                 Zendo
             </Link>

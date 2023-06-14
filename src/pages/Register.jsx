@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { FaUser } from "react-icons/fa";
+// import { FaUser } from "react-icons/fa";
 import { register, reset } from "../features/auth/authSlice";
 
 import Layout from "../components/Layout"
@@ -68,15 +68,18 @@ function Register() {
 
     return (
         <Layout>
+                <section className="flex flex-col items-center justify-center heading my-10">
+                    {/* <FaUser /> */}
+                    <h1 className="text-4xl">
+                         Registration
+                    </h1>
+                </section>
             <section className="heading">
-                <h1>
-                    <FaUser /> Register
-                </h1>
-                <p>Please create an account</p>
             </section>
             <section className="form">
                 <form onSubmit={onSubmit}>
                     <div className="form-group">
+                        <label htmlFor="username">Username</label>
                         <input
                             className="form-control"
                             id="username"
@@ -88,6 +91,7 @@ function Register() {
                         />
                     </div>
                     <div className="form-group">
+                        <label htmlFor="email">Email</label>
                         <input
                             className="form-control"
                             id="email"
@@ -99,6 +103,7 @@ function Register() {
                         />
                     </div>
                     <div className="form-group">
+                        <label htmlFor="password">Password</label>
                         <input
                             className="form-control"
                             id="password"
@@ -110,6 +115,7 @@ function Register() {
                         />
                     </div>
                     <div className="form-group">
+                        <label htmlFor="password2">Confirm Password</label>
                         <input
                             className="form-control"
                             id="password2"

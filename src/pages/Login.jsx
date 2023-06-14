@@ -58,11 +58,12 @@ function Login() {
     return (
         <Layout>
             <div className="page">
-                <section className="heading">
+                <section className="flex flex-col items-center justify-center heading my-10">
+                    <FaSignInAlt />
                     <h1 className="text-4xl">
-                        <FaSignInAlt /> Sign In
+                         Sign In
                     </h1>
-                    <p>Login and start setting messages</p>
+                    <p>Login and start setting your intentions</p>
                 </section>
                 <section className="form">
                     <form onSubmit={onSubmit}>
