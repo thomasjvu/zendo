@@ -7,9 +7,9 @@ import ReactQuill from "react-quill";
 import QuillMarkdown from "quilljs-markdown";
 
 function NoteForm() {
-    const [title, setTitle] = useState("");
+    // const [title, setTitle] = useState("");
     const [text, setText] = useState("");
-    const [privacy, setPrivacy] = useState("");
+    const [privacy, setPrivacy] = useState("public");
 
     const dispatch = useDispatch();
 
