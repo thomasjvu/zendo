@@ -32,7 +32,7 @@ function NoteForm() {
         <section className="form">
             <form onSubmit={onSubmit}>
                 <div className="form-group">
-                    <label className="" htmlFor="text">Start Writing</label>
+                    <label className="text" htmlFor="text">Start Writing</label>
                     <ReactQuill
                         theme="bubble"
                         className="editor"
@@ -43,20 +43,8 @@ function NoteForm() {
                         onChange={setText}
                     />
                 </div>
-                {/*
                 <div className="form-group">
-                    <label htmlFor="text">Note</label>
-                    <input
-                        type="text"
-                        name="text"
-                        id="text"
-                        value={text}
-                        onChange={(e) => setText(e.target.value)}
-                    />
-                </div>
-                */}
-                <div className="form-group">
-                    <label htmlFor="text">Privacy</label>
+                    <label htmlFor="privacy">Privacy</label>
                     <select
                         type=""
                         name="privacy"

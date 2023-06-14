@@ -31,7 +31,6 @@ body {
     font-family: "Trispace", monospace;
     background: #e6cca1;
     color: #000;
-    /* height: 100vh; */
 }
 
 /**
@@ -42,7 +41,7 @@ header {
     min-height: 14.2vh;
 }
 main {
-    height: 71.6vh;
+    min-height: 71.6vh;
 }
 footer {
     min-height: 14.2vh;
@@ -51,6 +50,10 @@ footer {
 /**
  * Canvas
  */
+
+#canvas {
+    height: 71.6vh !important;
+}
 
 .canvas-html-content {
     font-size: 0.75rem;
@@ -481,6 +484,8 @@ footer {
 
 .ql-editor {
     font-family: "Trispace", monospace;
+    border: 1px solid black;
+    min-height: 200px;
 }
 
 .ql-bubble .ql-editor blockquote {

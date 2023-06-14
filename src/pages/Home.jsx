@@ -8,7 +8,7 @@ import Layout from "../components/Layout";
 function Home() {
     return (
         <Layout>
-            <Canvas style={{ background: "#e6cca1" }} camera={{ rotation: [0, 0, 0], position: [0, 0, 5] }}>
+            <Canvas id="canvas" style={{ background: "#e6cca1" }} camera={{ rotation: [0, 0, 0], position: [0, 0, 5] }}>
                 <Suspense fallback={<ModelLoader />}>
                     <ambientLight intensity={1.5} />
                     <MeditationDiorama scale={[0.45, 0.45, 0.45]} position={[-0.75, -3.0, 0]} rotation={[0, 6.75, 0]} />

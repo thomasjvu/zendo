@@ -36,10 +36,7 @@ function Dashboard() {
             <div className="dashboard">
                 <section className="form-header">
                     <h2 className="form-heading text-4xl">@{user && user.username}</h2>
-                    <p className="form-subheading"> ~ Let your mind loose. ~</p>
-                </section>
-                <section className="form-header">
-                    <p>This form is Markdown enabled... go wild!</p>
+                    {/* <p className="form-subheading"> ~ Let your mind loose. ~</p> */}
                 </section>
                 <NoteForm />
                 <section className="content">
@@ -50,7 +47,7 @@ function Dashboard() {
                             ))}
                         </div>
                     ) : (
-                        <h3>You have no notes... :( sad face</h3>
+                        <h3>You have no notes.</h3>
                     )}
                 </section>
             </div>
